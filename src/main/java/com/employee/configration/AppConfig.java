@@ -14,26 +14,26 @@ import java.util.Properties;
 public class AppConfig {
 
     @Bean
-    InternalResourceViewResolver viewResolver(){
-        InternalResourceViewResolver resolver=new InternalResourceViewResolver();
+    InternalResourceViewResolver viewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/template/");
         resolver.setSuffix(".jsp");
         return resolver;
     }
 
     @Bean
-    LocalSessionFactoryBean sessionFactoryBean(){
-        LocalSessionFactoryBean sessionFactory=new LocalSessionFactoryBean();
+    LocalSessionFactoryBean sessionFactoryBean() {
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(getSource());
         sessionFactory.setHibernateProperties(getProperties());
         sessionFactory.setPackagesToScan("com.employee.model");
         return sessionFactory;
     }
 
-    private DriverManagerDataSource getSource(){
-        DriverManagerDataSource source=new DriverManagerDataSource();
+    private DriverManagerDataSource getSource() {
+        DriverManagerDataSource source = new DriverManagerDataSource();
         source.setDriverClassName("org.postgresql.Driver");
-        source.setUrl("postgresql://kuldeep:yTT9Dj8ZW5rI3ORhkAXKxTB7je6MyIwg@dpg-d4061k7diees73ajun2g-a.oregon-postgres.render.com/employeemanagement_cbno");
+        source.setUrl("jdbc:postgresql://dpg-d4061k7diees73ajun2g-a.oregon-postgres.render.com:5432/employeemanagement_cbno");
         source.setUsername("kuldeep");
         source.setPassword("yTT9Dj8ZW5rI3ORhkAXKxTB7je6MyIwg");
         return source;
