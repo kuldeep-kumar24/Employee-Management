@@ -32,10 +32,10 @@ public class AppConfig {
 
     private DriverManagerDataSource getSource(){
         DriverManagerDataSource source=new DriverManagerDataSource();
-        source.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        source.setUrl("jdbc:mysql://localhost:3306/EmployeeManagement?createDatabaseIfNotExist=true");
-        source.setUsername("root");
-        source.setPassword("kuldeep@123");
+        source.setDriverClassName("org.postgresql.Driver");
+        source.setUrl("postgresql://kuldeep:yTT9Dj8ZW5rI3ORhkAXKxTB7je6MyIwg@dpg-d4061k7diees73ajun2g-a.oregon-postgres.render.com/employeemanagement_cbno");
+        source.setUsername("kuldeep");
+        source.setPassword("yTT9Dj8ZW5rI3ORhkAXKxTB7je6MyIwg");
         return source;
     }
 
