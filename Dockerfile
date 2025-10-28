@@ -1,17 +1,14 @@
-# Use official Maven + JDK image to build the app
-FROM maven:3.9.6-eclipse-temurin-17 AS build
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
+# Step 1: Use a Tomcat base image
+FROM tomcat:10.1-jdk17
 
-# Use lightweight JRE image to run the app
-FROM eclipse-temurin:17-jre
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+# Step 2: Remove default webapps
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Expose the port for Render
+# Step 3: Copy your WAR to the Tomcat webapps directory
+COPY target/Employee_Managment-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+
+# Step 4: Expose port 8080
 EXPOSE 8080
-ENV PORT=8080
 
-# Run the jar
-CMD ["java", "-jar", "app.jar"]
+# Step 5: Start Tomcat
+CMD ["catalina.sh", "run"]
