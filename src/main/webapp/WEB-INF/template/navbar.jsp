@@ -97,7 +97,7 @@
         <h2>Employee Management</h2>
     </div>
     <ul>
-        <li><a href="/Employee-Management-4" class="active"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="/Employee-Management" class="active"><i class="fa-solid fa-house"></i>Home</a></li>
         <li><a href="add"><i class="fa-solid fa-user-plus"></i>Add</a></li>
         <li><a href="editEmployee"><i class="fa-solid fa-user-pen"></i>Edit</a></li>
         <li><a href="list"><i class="fa-solid fa-users"></i>List</a></li>
