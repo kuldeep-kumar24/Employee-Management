@@ -26,6 +26,11 @@ public class EmployeeController {
         return "home";
     }
 
+    @GetMapping("home")
+    public String gethomePage(){
+        return "home";
+    }
+
     @GetMapping("/add")
     public ModelAndView getEmployee(){
         return new ModelAndView("add_employee");
