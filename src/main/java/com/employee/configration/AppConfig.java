@@ -33,11 +33,12 @@ public class AppConfig {
     private DriverManagerDataSource getSource() {
         DriverManagerDataSource source = new DriverManagerDataSource();
         source.setDriverClassName("org.postgresql.Driver");
-        source.setUrl("jdbc:postgresql://dpg-d4061k7diees73ajun2g-a.oregon-postgres.render.com:5432/employeemanagement_cbno");
+        source.setUrl("jdbc:postgresql://dpg-d4061k7diees73ajun2g-a.oregon-postgres.render.com:5432/employeemanagement_cbno?sslmode=require");
         source.setUsername("kuldeep");
         source.setPassword("yTT9Dj8ZW5rI3ORhkAXKxTB7je6MyIwg");
         return source;
     }
+
 
     private Properties getProperties() {
         Properties properties = new Properties();
